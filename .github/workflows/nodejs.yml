@@ -8,12 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@dev
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@dev
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run build
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
+    - name: Install and Build
+      run: |
+        npm install
+        npm run-script build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 指定密钥，即在第一步中设置的
+        BRANCH: gh-pages  ##指定推送到的远程分支
+        FOLDER: dist # 指定构建之后要推送哪个目录的代码 如这里vuepress构建之后到产物在 docs 文件夹中
