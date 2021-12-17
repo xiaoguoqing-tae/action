@@ -2,33 +2,39 @@
   <div>
       <full-page :options="options" id="fullpage">
           <div class="section">
-              <h3>Section 1</h3>
+              <Home></Home>
           </div>
           <div class="section">
-              <div class="slide">
-                  <h3>Slide 2.1</h3>
-              </div>
-              <div class="slide">
-                  <h3>Slide 2.2</h3>
-              </div>
-              <div class="slide">
-                  <h3>Slide 2.3</h3>
-              </div>
+              <Person></Person>
           </div>
           <div class="section">
-              <h3>Section 3</h3>
+              <Photo></Photo>
           </div>
       </full-page>
   </div>
 </template>
 
 <script>
+import Home from './pages/Home'
+import Person from './pages/Person'
+import Photo from './pages/Photo'
 export default {
     name: 'app',
+    components:{
+        Home,
+        Person,
+        Photo
+    },
     data() {
         return {
             options: {
-              sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
+              sectionsColor: ["transparent","skyblue", "purple", "yellow"],
+              anchors:['Home', 'Person','Photo','Storeroom','More'],
+              navigation: true,
+              loopBottom: true,
+              easingcss3: "cubic-bezier(0.175 , 0.3 , 0.320 , 1.5)",
+              controlArrowColor: "rgba(0, 0, 0, 0.1)",
+              continuousVertical: true,
           }
       }
     },
@@ -38,7 +44,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+    @import "./styles/base.css";
     .section {
       text-align:center;
       font-size: 3em;
