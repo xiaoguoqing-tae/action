@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
 .left-nav{
     width: 200px;
     height: 100%;
