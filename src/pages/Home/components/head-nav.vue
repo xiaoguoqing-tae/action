@@ -55,38 +55,38 @@ export default {
 
 <style scoped lang="scss">
     .head-nav{
-        width: 100%;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    ul{
+        display: flex;
         height: 60px;
-        background: rgba(0, 0, 0, 0.2);
-        top: 0;
-        ul{
-            display: flex;
-            height: 60px;
-            list-style: none;
-            justify-content: center;
-            align-items: center;
-                li{
-                    width: 15%;
-                    height: 60px;
-                    cursor: pointer;
-                    color: #fff;
-                    transition: 0.5s ease-in-out;
-                    &:hover{
-                        background-color: rgba(255, 255, 255, 0.8);
-                        color: darkblue;
-                        border-top: 3px solid #426696;
-                    }
-                    a{
-                        display: flex;
-                        flex-direction: column;
-                        span{
-                            line-height: 28px;
-                            font-size: 16px;
-                            font-family: "幼圆";
-                            font-weight: 400;
-                        }
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+            li{
+                width: 15%;
+                height: 60px;
+                cursor: pointer;
+                color: #fff;
+                transition: 0.5s ease-in-out;
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.8);
+                    color: darkblue;
+                    border-top: 3px solid #426696;
+                }
+                a{
+                    display: flex;
+                    flex-direction: column;
+                    span{
+                        line-height: 28px;
+                        font-size: 16px;
+                        font-family: "幼圆";
+                        font-weight: 400;
                     }
                 }
-        }
-    } 
+            }
+    }
+} 
 </style>
