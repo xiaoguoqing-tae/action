@@ -1,7 +1,7 @@
 <template>
     <div class="head-nav">
         <ul>
-            <li v-for="(item,index) in menulist" :key="index">
+            <li v-for="(item,index) in menulist" @mouseover="mouseover" @mouseout="mouseout" :key="index" :class="index==0&&num==1?'li-active':''">
                 <a :href="'#'+item.English">
                     <span>{{item.English}}</span>
                     <span>{{item.Chinese}}</span>     
@@ -27,6 +27,10 @@ export default {
             },{
                 'English':'Person',
                 'Chinese':'简介'
+            },
+            {
+                'English':'Christmas',
+                'Chinese':'圣诞节专题'
             },{
                 'English':'Photo',
                 'Chinese':'照片集'
@@ -36,7 +40,8 @@ export default {
             },{
                 'English':'More',
                 'Chinese':'更多'
-            }]
+            }],
+            num:1
         };
     },
     created() {
@@ -48,6 +53,12 @@ export default {
     methods: {
         toPage(url){
             this.$router.push({name:url})
+        },
+        mouseover(){
+            this.num = -1
+        },
+        mouseout(){
+            this.num = 1
         }
     },
 };
@@ -86,6 +97,11 @@ export default {
                         font-weight: 400;
                     }
                 }
+            }
+            .li-active{
+                    background-color: rgba(255, 255, 255, 0.8);
+                    color: darkblue;
+                    border-top: 3px solid #426696;
             }
     }
 } 
