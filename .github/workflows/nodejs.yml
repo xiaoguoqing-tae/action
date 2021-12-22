@@ -15,6 +15,9 @@ jobs:
       run: |
         npm install
         npm run-script build
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
