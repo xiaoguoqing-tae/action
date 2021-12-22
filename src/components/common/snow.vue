@@ -1,212 +1,31 @@
 <template>
 <div id="snow">
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
-    <div class="snow"></div>
+    <div class="snow" v-for="(item,index) in 200" :key="index"></div>
+    <div class="snowground"></div>
+    <div class="circle1"></div>
+    <img class="snowman" v-if="isshow1" src="../../assets/snowman.png">
+    <div class="treebox" v-if="isshow1">
+      <img class="tree" src="../../assets/tree.png">
+    </div>
+    <img class="women" v-if="isshow1"  src="../../assets/women.png">
+    <img class="man" v-if="isshow1"  src="../../assets/man.png">
+    <img class="dao" v-if="isshow2" src="../../assets/dao.png"> 
+    <img class="die" v-if="isshow2" src="../../assets/die.png"> 
 </div>
 </template>
 
 <script>
+import anime from 'animejs';
 export default {
     props: {
-
+      isshow1:{
+        type:Boolean,
+        default:false
+      },
+      isshow2:{
+        type:Boolean,
+        default:false
+      }
     },
     components: {
 
@@ -216,8 +35,57 @@ export default {
 
         };
     },
-    created() {
-
+    watch:{
+      isshow1(val){
+        if(val){
+          this.$nextTick(()=>{
+            anime({
+              targets: '.tree',
+              translateY: 1000,
+              duration: 2000,
+              easing: 'easeInOutExpo'
+            })
+            anime({
+              targets: '.snowman',
+              translateY: 1000,
+              duration: 3000,
+              rotate:-5,
+              easing: 'easeInOutExpo'
+            })
+            anime({
+              targets: '.man',
+              translateY: 1000,
+              duration: 4000,
+              easing: 'easeInOutExpo'
+            })
+            anime({
+              targets: '.women',
+              translateY: 1000,
+              duration: 5000,
+              easing: 'easeInOutExpo'
+            })
+          })
+        }
+      },
+      isshow2(val){
+        if(val){
+          this.$nextTick(()=>{
+            anime({
+              targets: '.die',
+              translateY: 1010,
+              rotate:-25,
+              duration: 2000,
+              easing: 'easeInOutExpo'
+            })
+            anime({
+              targets: '.dao',
+              translateY: 1000,
+              duration: 3000,
+              easing: 'easeInOutExpo'
+            })
+          })
+        }
+      }
     },
     mounted() {
         
@@ -242,7 +110,7 @@ export default {
 }
 
 .snow {
-  $total: 400;
+  $total: 200;
   position: absolute;
   width: 10px;
   height: 10px;
@@ -277,5 +145,54 @@ export default {
     }
   }
 }
-
+.snowground{
+  background: #fff;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+}
+.circle1{
+  position: absolute;
+  bottom: -45px;
+  background: #fff;
+  height: 150px;
+  width: 100%;
+  border-radius: 50%;
+}
+.snowman{
+  width: 15%;
+  position: absolute;
+  bottom: 1000px;
+  left: 0px;
+  transform: rotate(-5deg);
+}
+.tree{
+  width: 20%;
+  position: absolute;
+  bottom: 1000px;
+  left: 40%;
+}
+.die{
+  width: 20%;
+  position: absolute;
+  bottom: 1000px;
+  left: 30%;
+}
+.dao{
+  width: 10%;
+  position: absolute;
+  bottom: 1000px;
+  left: 35%;
+}
+.man{
+  position: absolute;
+  bottom: 1000px;
+  left: 35%;
+}
+.women{
+  position: absolute;
+  bottom: 1000px;
+  left: 25%;
+}
 </style>

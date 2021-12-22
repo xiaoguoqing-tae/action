@@ -64,7 +64,7 @@ export default {
 };
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
     .head-nav{
     width: 100%;
     height: 60px;

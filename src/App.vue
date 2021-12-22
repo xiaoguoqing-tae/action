@@ -1,8 +1,6 @@
 <template>
   <div>
-        <!-- <audio controls autoplay>
-            <source src="./assets/Rain.mp3" />
-        </audio> -->
+      <play></play>
       <full-page :options="options" id="fullpage">
           <div class="section">
               <Home></Home>
@@ -25,13 +23,15 @@ import Home from './pages/Home'
 import Person from './pages/Person'
 import Christmas from './pages/Christmas'
 import Photo from './pages/Photo'
+import play from './components/common/play.vue'
 export default {
     name: 'app',
     components:{
         Home,
         Person,
         Christmas,
-        Photo
+        Photo,
+        play
     },
     data() {
         return {
@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
     @import "./styles/base.css";
     .section {
       text-align:center;

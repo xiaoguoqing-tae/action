@@ -1,80 +1,264 @@
 <template>
-    <div class="box">
-        <div class="control">
-            <img src="../../assets/pre.png">
+    <div class="music" v-drag>
+        <div class="music__main">
+            <div :class="['music__main__cover',isPlay ? 'active' : '']" @click="play">
+                <img :src="audioimg" />
+            </div>
+            <div class="music__main__timeBar">
+                <div class="time"> 
+                    <span>{{ realMusicTime }}</span>
+                    <span>{{ totalMusicTime }}</span>
+                </div>
+                <div class="bar" ref="bar" @click="handClickBar">
+                    <div class="bar__slid" ref="slid" @click="handClickBar"></div>
+                </div>
+            </div>
         </div>
-        <div class="control" @click="play">
-            <img src="../../assets/start.png">
+        <div class="music__btn" @click="switchMusic">
+            <img src="../../assets/refresh.png">
         </div>
-        <div class="control">
-            <img src="../../assets/next.png">
-        </div>
-        <div class="process">
-            <div class="process1"></div>
-        </div>
+        <div class="music__mask" :style="{backgroundImage:'url('+audioimg+')'}"></div>
+        <audio ref="music" :src="audioSrc"></audio>
     </div>
 </template>
 
 <script>
 export default {
     data() {
+        this.audioSrcs = [
+            require("../../assets/哪里都是你.flac"),
+            require("../../assets/Christmas without You.mp3"),
+            require("../../assets/I.mp3"),
+            require("../../assets/11：11.mp3"),
+            require("../../assets/Rain.mp3"),
+            require("../../assets/This Christmas.mp3"),
+        ];
+        this.audioimgs = [
+            require("../../assets/imgs/1.jpg"),
+            require("../../assets/imgs/2.jpg"),
+            require("../../assets/imgs/3.jpg"),
+            require("../../assets/imgs/4.jpg"),
+            require("../../assets/imgs/5.jpg"),
+            require("../../assets/imgs/6.jpg"),
+        ]
         return {
-
+            isPlay: false,
+            realMusicTime: "00:00",
+            totalMusicTime: "00:00",
+            audioSrc: this.audioSrcs[0],
+            audioimg:this.audioimgs[0]
         };
     },
+    created() { },
     mounted() {
-
+        this.watchMusicTime();
     },
     methods: {
-        play(){
-
+        play() {
+            if (this.music.paused) {
+                this.music.play();
+                this.isPlay = true;
+            } else {
+                this.music.pause();
+                this.isPlay = false;
+            }
+        },
+        // 处理时间
+        handlMusicTime() {
+            //用秒数来显示当前播放进度
+            let timeDisplay = Math.floor(this.music.currentTime); //获取实时时间
+            //分钟
+            let minute = parseInt(timeDisplay / 60);
+            if (minute < 10) {
+                minute = "0" + minute;
+            }
+            //秒
+            let second = Math.round(timeDisplay % 60);
+            if (second < 10) {
+                second = "0" + second;
+            }
+            this.realMusicTime = minute + ":" + second;
+        },
+        // 处理进度条
+        handMusicBar() {
+            let slid = this.$refs.slid;
+            let duration = this.music.duration;
+            let x = ((this.music.currentTime / duration) * 100).toFixed(2) + "%";
+            slid.style.width = x;
+        },
+        // 处理点击进度条事件
+        handClickBar(e) {
+            const barTotalWidth = this.bar.offsetWidth; // bar 总宽度
+            const rect = e.target.getBoundingClientRect(); // 元素右边距离页面边距的距离 返回上下左右
+            let length = e.pageX - rect.left;
+            this.music.currentTime = length / barTotalWidth * this.music.duration; // 计算播放时间 位置百分比*总时间
+            this.$nextTick(() => {
+                this.music.play();
+                this.isPlay = true;
+            })
+        },
+        // 切换歌曲
+        switchMusic() {
+            this.isPlay = false;
+            let rand = Math.floor(Math.random() * 6)
+            this.audioSrc = this.audioSrcs[rand];
+            this.audioimg = this.audioimgs[rand]
+            this.music.load()
+            // 文件下载完毕，如果不用等到全部下载完毕，可以用canplay事件
+            this.music.addEventListener("canplaythrough", () => {
+                this.music.play();
+                this.isPlay = true;
+            });
+        },
+        //使用事件监听方式捕捉事件
+        watchMusicTime() {
+            this.music = this.$refs.music;
+            this.bar = this.$refs.bar;
+            this.music.addEventListener(
+                "timeupdate",
+                () => {
+                    this.handlMusicTime();
+                    this.$nextTick(() => {
+                        this.handMusicBar();
+                    })
+                },
+                false
+            );
+            // 播放完毕
+            this.music.addEventListener("ended", () => {
+                this.switchMusic(); // 自动播放
+            });
+            // 捕获音频文件已准备完毕
+            // 当媒体文件可以播放的时候会触发oncanplay事件,也可以用oncanplay
+            this.music.oncanplaythrough = () => {
+                let time = this.music.duration;
+                //分钟
+                let minutes = parseInt(time / 60);
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                //秒
+                let seconds = Math.round(time % 60);
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                this.totalMusicTime = minutes + ":" + seconds;
+            };
         }
-    },
+    }
 };
 </script>
 
-<style scoped lang="less">
-    .box{
-        width: 350px;
-        height: 40px;
-        background:#252525;
-        border-radius: 5px;
+<style lang="scss" scoped>
+@keyframes musicRotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.music {
+    width: 280px;
+    margin: 0 auto;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 1000;
+    left: 80%;
+    top: 70px;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    &__main {
         display: flex;
-        .control{
-            width: 50px;
+        &__cover {
+            width: 40px;
             height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img{
-                width:50%;
-                height:50%
+            overflow: hidden;
+            border-radius: 50%;
+            background-color: #dddddd;
+            cursor: pointer;
+            animation: musicRotate 10s linear infinite;
+            animation-play-state: paused; // 暂定动画
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            &.active {
+                animation-play-state: running; // 运行动画
             }
         }
-        .process{
+        &__timeBar {
             flex: 1;
             display: flex;
-            align-items: center;
-            .process1{
-                height: 10px;
-                width: 95%;
-                background-color: #1b1b1b;
-                border-radius:10px;
-                box-shadow: 0px 0px 6px 0px rgba(49, 47, 47, 0.1);
-                --percent:20;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding-left: 20px;
+            box-sizing: border-box;
+            .time {
+                display: flex;
+                justify-content: space-between;
+                color: #fff;
+                span {
+                    font-size: 19px;
+                    line-height: 1;
+                }
             }
-            .process1::before {
-                counter-reset: progress var(20, 0);
-                content: counter(progress) '%\2002';
-                display: block;
-                height: 10px;
-                width: calc(300px * 20 / 100);
-                background-color: #fff;
-                text-align: right;
-                white-space: nowrap;
+            .bar {
+                height: 8px;
+                background-color: #fbfbfb;
+                border-radius: 8px;
+                position: relative;
+                border-radius: 8px;
                 overflow: hidden;
-                border-radius:10px;
+                cursor: pointer;
+                &__slid {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-color: #e24d80;
+                    height: 100%;
+                    width: 0;
+                    transition: width 0.3s;
+                }
             }
         }
     }
+    &__btn {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 80px;
+        top: 5px;
+        img{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+    &__mask {
+        z-index: -2;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        filter: blur(15px);
+        opacity: 0.5;
+        transition: all 0.8s;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            content: '';
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+    }
+}
 </style>

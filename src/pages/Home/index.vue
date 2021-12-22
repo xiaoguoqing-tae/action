@@ -38,6 +38,6 @@ export default {
 };
 </script>
 
-<style scoped lang="less">
-    @import "../../styles/sec1.less";
+<style scoped lang="scss">
+    @import "../../styles/sec1.scss";
 </style>

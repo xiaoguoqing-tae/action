@@ -1,17 +1,17 @@
 <template>
-    <div>
-        <snow></snow>
+    <div class="video">
+        <!-- <video  src="../../assets/xi.mp4"></video> -->
     </div>
 </template>
 
 <script>
-import snow from '../../components/common/snow.vue'
+
 export default {
-    props: {
+    props: { 
 
     },
     components: {
-        snow
+        
     },
     data() {
         return {
@@ -31,5 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+    // .video{
+    //     width: 30%;
+    // }
 </style>
