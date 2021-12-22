@@ -21,7 +21,9 @@ export default {
 <style scoped lang="less">
 .left-nav{
     width: 200px;
-    height: 100%;
+    height: 82%;
+    margin-top: 2%;
+    margin-left: 10px;
     background: rgb(221, 229, 209);
     display: flex;
     justify-content: center;

@@ -1,17 +1,17 @@
 <template>
     <div>
-        <snow></snow>
+        <play></play>
     </div>
 </template>
 
 <script>
-import snow from '../../components/common/snow.vue'
+import play from '../../components/common/play.vue'
 export default {
     props: {
 
     },
     components: {
-        snow
+        play
     },
     data() {
         return {
@@ -30,6 +30,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
 
 </style>
