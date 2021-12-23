@@ -32,8 +32,8 @@ export default {
                 'English':'Christmas',
                 'Chinese':'圣诞节专题'
             },{
-                'English':'Photo',
-                'Chinese':'照片集'
+                'English':'Vedio',
+                'Chinese':'放映室'
             },{
                 'English':'Storeroom',
                 'Chinese':'储物间'

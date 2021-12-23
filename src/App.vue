@@ -12,7 +12,7 @@
               <Christmas></Christmas>
           </div>
           <div class="section">
-              <Photo></Photo>
+              <Vedio></Vedio>
           </div>
       </full-page>
   </div>
@@ -22,7 +22,7 @@
 import Home from './pages/Home'
 import Person from './pages/Person'
 import Christmas from './pages/Christmas'
-import Photo from './pages/Photo'
+import Vedio from './pages/Vedio'
 import play from './components/common/play.vue'
 export default {
     name: 'app',
@@ -30,14 +30,14 @@ export default {
         Home,
         Person,
         Christmas,
-        Photo,
+        Vedio,
         play
     },
     data() {
         return {
             options: {
-              sectionsColor: ["transparent","skyblue", "purple", "transparent"],
-              anchors:['Home', 'Person','Christmas','Photo','Storeroom','More'],
+              sectionsColor: ["transparent","skyblue", "purple", "#233b3e"],
+              anchors:['Home', 'Person','Christmas','Vedio','Storeroom','More'],
               navigation: true,
               loopBottom: true,
               easingcss3: "cubic-bezier(0.175 , 0.3 , 0.320 , 1.5)",
